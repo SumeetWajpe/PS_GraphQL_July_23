@@ -1,9 +1,9 @@
 export class BookModel {
-    constructor(id = 0, title = "", epub = false, author = "", publication = "") {
+    constructor(id = 0, title = "", epub = false, authorId = 0, publication = "") {
         this.id = id;
         this.title = title;
         this.epub = epub;
-        this.author = author;
+        this.authorId = authorId;
         this.publication = publication;
     }
 }
@@ -13,35 +13,35 @@ export let booksData = {
             id: 1,
             title: "Wings Of Fire",
             epub: true,
-            author: "Dr. APJ Abdul Kalam",
+            authorId: 1,
             publication: "Jaico",
         },
         {
             id: 2,
             title: "India 2020",
             epub: true,
-            author: "Dr. APJ Abdul Kalam",
+            authorId: 1,
             publication: "Jaico",
         },
         {
             id: 3,
             title: "Kaizen",
             epub: true,
-            author: "Sarah Harvey",
+            authorId: 2,
             publication: "Printwell",
         },
         {
             id: 4,
             title: "Ikigai",
             epub: true,
-            author: "Hector Garcia",
+            authorId: 4,
             publication: "Kindle",
         },
         {
             id: 5,
             title: "Mrutunjay",
             epub: true,
-            author: "Shivaji Sawant",
+            authorId: 3,
             publication: "Printwell",
         },
     ],

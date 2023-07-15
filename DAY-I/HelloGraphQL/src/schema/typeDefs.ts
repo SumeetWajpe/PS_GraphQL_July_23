@@ -12,7 +12,7 @@ type Book{
   id:ID!
   title:String
   epub:Boolean
-  author:String
+  author:Author
   publication:String
 }
 type Author{

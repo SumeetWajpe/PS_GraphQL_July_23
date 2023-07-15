@@ -9,4 +9,9 @@ export const resolvers = {
     author: (_, { id }: { id: number }): Author =>
       authorsData.authors.find(a => a.id === +id),
   },
+  Book: {
+    author: parent => {
+      return authorsData.authors.find(a => a.id == parent.authorId);
+    },
+  },
 };

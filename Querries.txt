@@ -50,3 +50,17 @@ fragment bookfields on Book {
     epub
     publication
 }
+
+// Using Query to get associated object
+
+query GetAllBooks($bookId: ID!) {
+  book(id: $bookId) {
+    id
+    title
+    epub
+    publication
+    author {
+      name
+    }
+  }
+}
