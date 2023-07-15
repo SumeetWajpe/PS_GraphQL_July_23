@@ -1,0 +1,19 @@
+// Get Book By ID
+
+query GetBookById($bookId: ID!) {
+  book(id: $bookId) {
+    title
+    author
+  }
+}
+
+// Get All books
+query GetAllBooks {
+  books {
+    id
+    title
+    epub
+    author
+    publication
+  }
+}
