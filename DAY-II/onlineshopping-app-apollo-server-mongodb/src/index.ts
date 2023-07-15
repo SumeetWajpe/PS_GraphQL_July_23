@@ -5,6 +5,13 @@ import pkg from "body-parser";
 import express from "express";
 import { typeDefs } from "./schema/typeDefs.js";
 import { resolvers } from "./schema/resolvers.js";
+import mongoose from "mongoose";
+mongoose.connect(
+  "mongodb+srv://sumeetwajpe:TestMongodb@123@cluster0.xd8xtse.mongodb.net/onlineshoppingdb",
+);
+mongoose.connection.on("open", () => {
+  console.log("Connected to onlineshoppingDB !");
+});
 const app = express();
 
 const server = new ApolloServer({
