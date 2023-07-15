@@ -5,13 +5,29 @@ const typeDefs = `#graphql
 
 #root-query
 type Query{
-    hello:String
+    book:Book
+}
+
+type Book{
+  id:ID!
+  title:String
+  epub:Boolean
+  author:String
+  publication:String
 }
 `;
 
 const resolvers = {
   Query: {
-    hello: () => "Hello Graphql !",
+    book: () => {
+      return {
+        id: 1,
+        title: "Wings Of Fire",
+        epub: true,
+        author: "Dr. APJ Abdul Kalam",
+        publication: "Jaico",
+      };
+    },
   },
 };
 
