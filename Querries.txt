@@ -64,3 +64,27 @@ query GetAllBooks($bookId: ID!) {
     }
   }
 }
+
+// Using fragments & associated objects
+
+query GetAllBooks($bookId: ID!) {
+  book(id: $bookId) {
+    ...bookfields
+    author {
+      ...authorfields
+    }
+  }
+}
+
+fragment bookfields on Book{
+  id
+    title
+    epub
+    publication
+}
+fragment authorfields on Author{
+    id
+    name
+    age
+    noOfBooks
+}

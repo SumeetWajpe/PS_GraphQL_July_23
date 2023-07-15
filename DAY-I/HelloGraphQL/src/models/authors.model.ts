@@ -1,4 +1,4 @@
-export class Author {
+export class AuthorModel {
   constructor(
     public id: number = 0,
     public name = "",
@@ -7,7 +7,7 @@ export class Author {
   ) {}
 }
 type AuthorsData = {
-  authors: Author[];
+  authors: AuthorModel[];
 };
 export let authorsData: AuthorsData = {
   authors: [
