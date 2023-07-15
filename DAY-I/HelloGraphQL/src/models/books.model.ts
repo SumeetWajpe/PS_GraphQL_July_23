@@ -1,4 +1,18 @@
-export let booksData = {
+export class BookModel {
+  constructor(
+    public id = 0,
+    public title = "",
+    public epub = false,
+    public author = "",
+    public publication = "",
+  ) {}
+}
+
+type BooksData = {
+  books: BookModel[];
+};
+
+export let booksData: BooksData = {
   books: [
     {
       id: 1,

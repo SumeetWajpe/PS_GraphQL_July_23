@@ -1,3 +1,12 @@
+export class BookModel {
+    constructor(id = 0, title = "", epub = false, author = "", publication = "") {
+        this.id = id;
+        this.title = title;
+        this.epub = epub;
+        this.author = author;
+        this.publication = publication;
+    }
+}
 export let booksData = {
     books: [
         {

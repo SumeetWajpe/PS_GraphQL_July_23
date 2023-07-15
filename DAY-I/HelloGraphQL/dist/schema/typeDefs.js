@@ -4,6 +4,8 @@ export const typeDefs = `#graphql
 type Query{
     books:[Book]
     book(id:ID!):Book
+    authors:[Author]
+    author(id:ID!):Author
 }
 
 type Book{
@@ -13,4 +15,11 @@ type Book{
   author:String
   publication:String
 }
+type Author{
+  id:ID!
+  name:String
+  age:Int
+  noOfBooks:Int
+}
+
 `;
