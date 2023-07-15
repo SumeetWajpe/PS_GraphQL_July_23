@@ -2,8 +2,8 @@ export const typeDefs = `#graphql
 
 #root-query
 type Query{
-    books:[Book]
-    book(id:ID!):Book
+    # books:[Book]
+    # book(id:ID!):Book
     authors:[Author]
     author(id:ID!):Author
 }
