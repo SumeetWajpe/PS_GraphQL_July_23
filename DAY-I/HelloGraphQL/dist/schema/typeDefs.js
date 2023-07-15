@@ -2,7 +2,7 @@ export const typeDefs = `#graphql
 
 #root-query
 type Query{
-    book:Book
+    books:[Book]
 }
 
 type Book{
