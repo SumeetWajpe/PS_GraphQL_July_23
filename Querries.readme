@@ -17,3 +17,36 @@ query GetAllBooks {
     publication
   }
 }
+
+// Using Aliases
+
+query AliasesInBook($bookId: ID!,$anotherbookId: ID!) {
+  firstbook:book(id: $bookId) {
+    title
+    author
+  }
+  secondbook:book(id: $anotherbookId) {
+    title
+    author
+  }
+}
+
+// Using Fragments
+
+query Book($bookId: ID!,$anotherbookId: ID!) {
+  firstbook:book(id: $bookId) {
+    id
+   ...bookfields
+
+  }
+  secondbook:book(id: $anotherbookId) {
+    ...bookfields
+  }
+}
+
+fragment bookfields on Book {
+    title
+    author
+    epub
+    publication
+}
