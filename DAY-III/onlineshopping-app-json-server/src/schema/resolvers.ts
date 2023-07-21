@@ -20,4 +20,25 @@ export const resolvers = {
       return response.data;
     },
   },
+  Book: {
+    author: async parent => {
+      let response = await axios.get(
+        `http://localhost:3500/authors/${parent.authorId}`,
+      );
+      return response.data;
+    },
+  },
+  Mutation: {
+    createAuthor: async (_, { id, name, age, noOfBooks }) => {
+      let response = await axios.post("http://localhost:3500/authors", {
+        id,
+        name,
+        age,
+        noOfBooks,
+      });
+
+      console.log(response);
+      return `Author with id : ${id} inserted successfully !`;
+    },
+  },
 };

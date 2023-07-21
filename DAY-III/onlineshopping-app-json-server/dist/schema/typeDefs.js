@@ -22,4 +22,8 @@ type Author{
   noOfBooks:Int
 }
 
+type Mutation{
+  createAuthor(id:ID!,name:String!,age:Int,noOfBooks:Int):String
+}
+
 `;

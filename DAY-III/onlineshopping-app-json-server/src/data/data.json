@@ -23,9 +23,21 @@
       "name": "Hector Garcia",
       "age": 45,
       "noOfBooks": 5
+    },
+    {
+      "id": "10",
+      "name": "Mrs. Sudha Murthy",
+      "age": 65,
+      "noOfBooks": 25
+    },
+    {
+      "id": "11",
+      "name": "Rabindranath Tagore",
+      "age": 75,
+      "noOfBooks": 10
     }
   ],
-  "books":[
+  "books": [
     {
       "id": 1,
       "title": "Wings Of Fire",

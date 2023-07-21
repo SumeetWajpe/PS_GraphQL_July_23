@@ -88,3 +88,10 @@ fragment authorfields on Author{
     age
     noOfBooks
 }
+
+// Mutation
+
+mutation AddAuthorMutation($createAuthorId: ID!, $name: String!, $age: Int, $noOfBooks: Int) {
+  createAuthor(id: $createAuthorId, name: $name, age: $age, noOfBooks: $noOfBooks)
+  
+}
