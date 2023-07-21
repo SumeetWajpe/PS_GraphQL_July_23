@@ -1,0 +1,65 @@
+{
+  "authors": [
+    {
+      "id": 1,
+      "name": "Dr. APJ Abdul Kalam",
+      "age": 70,
+      "noOfBooks": 20
+    },
+    {
+      "id": 2,
+      "name": "Sarah Harvey",
+      "age": 50,
+      "noOfBooks": 10
+    },
+    {
+      "id": 3,
+      "name": "Shivaji Sawant",
+      "age": 40,
+      "noOfBooks": 2
+    },
+    {
+      "id": 4,
+      "name": "Hector Garcia",
+      "age": 45,
+      "noOfBooks": 5
+    }
+  ],
+  "books":[
+    {
+      "id": 1,
+      "title": "Wings Of Fire",
+      "epub": true,
+      "authorId": 1,
+      "publication": "Jaico"
+    },
+    {
+      "id": 2,
+      "title": "India 2020",
+      "epub": true,
+      "authorId": 1,
+      "publication": "Jaico"
+    },
+    {
+      "id": 3,
+      "title": "Kaizen",
+      "epub": true,
+      "authorId": 2,
+      "publication": "Printwell"
+    },
+    {
+      "id": 4,
+      "title": "Ikigai",
+      "epub": true,
+      "authorId": 4,
+      "publication": "Kindle"
+    },
+    {
+      "id": 5,
+      "title": "Mrutunjay",
+      "epub": true,
+      "authorId": 3,
+      "publication": "Printwell"
+    }
+  ]
+}

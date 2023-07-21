@@ -36,4 +36,5 @@ export let authorsData: AuthorsData = {
       noOfBooks: 5,
     },
   ],
+  
 };
