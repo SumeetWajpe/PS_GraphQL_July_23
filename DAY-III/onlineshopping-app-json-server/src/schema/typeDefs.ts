@@ -23,7 +23,16 @@ type Author{
 }
 
 type Mutation{
-  createAuthor(id:ID!,name:String!,age:Int,noOfBooks:Int):String
+  # createAuthor(id:ID!,name:String!,age:Int,noOfBooks:Int):String #without  input types
+  createAuthor(input:AuthorInputType!):String
+
+}
+
+input AuthorInputType{
+  id:ID!
+  name:String!
+  age:Int
+  noOfBooks:Int
 }
 
 `;

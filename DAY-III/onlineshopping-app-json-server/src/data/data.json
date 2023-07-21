@@ -35,6 +35,12 @@
       "name": "Rabindranath Tagore",
       "age": 75,
       "noOfBooks": 10
+    },
+    {
+      "id": "12",
+      "name": "Khushwant Singh",
+      "age": 75,
+      "noOfBooks": 5
     }
   ],
   "books": [

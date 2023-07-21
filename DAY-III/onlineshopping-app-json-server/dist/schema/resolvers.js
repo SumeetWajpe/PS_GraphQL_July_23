@@ -25,14 +25,24 @@ export const resolvers = {
         },
     },
     Mutation: {
-        createAuthor: async (_, { id, name, age, noOfBooks }) => {
+        // without input type
+        // createAuthor: async (_, { id, name, age, noOfBooks }) => {
+        //   let response = await axios.post("http://localhost:3500/authors", {
+        //     id,
+        //     name,
+        //     age,
+        //     noOfBooks,
+        //   });
+        //   console.log(response);
+        //   return `Author with id : ${id} inserted successfully !`;
+        // },
+        createAuthor: async (_, { input: { id, name, age, noOfBooks } }) => {
             let response = await axios.post("http://localhost:3500/authors", {
                 id,
                 name,
                 age,
                 noOfBooks,
             });
-            console.log(response);
             return `Author with id : ${id} inserted successfully !`;
         },
     },
