@@ -5,7 +5,6 @@ import pkg from "body-parser";
 import express from "express";
 import { typeDefs } from "./schema/typeDefs.js";
 import { resolvers } from "./schema/resolvers.js";
-import mongoose from "mongoose";
 
 const app = express();
 
