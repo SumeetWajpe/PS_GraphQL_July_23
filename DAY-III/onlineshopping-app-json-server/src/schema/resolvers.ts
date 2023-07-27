@@ -1,6 +1,10 @@
+import { GraphQLError } from "graphql";
 import { AuthorModel } from "../models/authors.model.js";
 import { BookModel } from "../models/books.model.js";
 import axios from "axios";
+
+// Resolvers (parent[associated object],arguments,ctx)
+
 export const resolvers = {
   Query: {
     authors: async () => {
@@ -15,13 +19,25 @@ export const resolvers = {
       let response = await axios.get("http://localhost:3500/books");
       return response.data;
     },
-    book: async (_, { id }) => {
-      let response = await axios.get(`http://localhost:3500/books/${id}`);
-      return response.data;
+    book: async (_, { id }, ctx) => {
+      try {
+        console.log("Within Resolver", ctx.token);
+        let response = await axios.get(`http://localhost:3500/books/${id}`);
+        return {
+          __typename: "Book",
+          ...response.data,
+        };
+      } catch (error) {
+        return {
+          __typename: "BookError",
+          message: "Book not found !",
+        };
+      }
     },
   },
   Book: {
-    author: async parent => {
+    author: async (parent, _, ctx) => {
+      console.log("Within Resolver", ctx.token);
       let response = await axios.get(
         `http://localhost:3500/authors/${parent.authorId}`,
       );

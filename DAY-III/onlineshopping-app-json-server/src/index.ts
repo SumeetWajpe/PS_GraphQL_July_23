@@ -5,10 +5,11 @@ import pkg from "body-parser";
 import express from "express";
 import { typeDefs } from "./schema/typeDefs.js";
 import { resolvers } from "./schema/resolvers.js";
+import { AuthContext } from "./context/auth.context.js";
 
 const app = express();
 
-const server = new ApolloServer({
+const server = new ApolloServer<AuthContext>({
   typeDefs,
   resolvers,
 });
@@ -22,7 +23,18 @@ app.use(
   "/graphql",
   cors<cors.CorsRequest>(), // inter domain communication
   pkg.json(), // read json data from client
-  expressMiddleware(server),
+  expressMiddleware<AuthContext>(server, {
+    context: async ({ req, res }) => {
+      if (req.headers.authorization) {
+        let token = req.headers.authorization.split(" ")[1];
+        // console.log(token);
+        return { token };
+      } else {
+        console.log("No Token Found");
+        return { token: "" };
+      }
+    },
+  }),
 );
 
 app.listen(4000, () => {

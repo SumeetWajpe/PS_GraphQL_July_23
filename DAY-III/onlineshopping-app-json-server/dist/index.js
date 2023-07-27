@@ -17,7 +17,19 @@ await server.start();
 //highlight-start
 app.use("/graphql", cors(), // inter domain communication
 pkg.json(), // read json data from client
-expressMiddleware(server));
+expressMiddleware(server, {
+    context: async ({ req, res }) => {
+        if (req.headers.authorization) {
+            let token = req.headers.authorization.split(" ")[1];
+            // console.log(token);
+            return { token };
+        }
+        else {
+            console.log("No Token Found");
+            return { token: "" };
+        }
+    },
+}));
 app.listen(4000, () => {
     console.log("Apollo Server running at http://localhost:4000/graphql");
 });

@@ -3,9 +3,16 @@ export const typeDefs = `#graphql
 #root-query
 type Query{
     books:[Book]
-    book(id:ID!):Book
+    book(id:ID!):BookResult 
     authors:[Author]
     author(id:ID!):Author
+}
+
+union BookResult = Book | BookError
+
+type BookError{
+  message:String,
+  lineNo:Int
 }
 
 type Book{
