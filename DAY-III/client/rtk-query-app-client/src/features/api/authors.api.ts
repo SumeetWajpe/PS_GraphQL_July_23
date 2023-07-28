@@ -13,12 +13,16 @@ export interface GetAuthorsResponse {
   authors: Author[];
 }
 
+export interface AuthorResponse {
+  author: Author;
+}
+
 export const api = createApi({
   baseQuery: graphqlRequestBaseQuery({
     url: "http://localhost:4000/graphql",
   }),
   endpoints: builder => ({
-    getAuthors: builder.query<GetAuthorsResponse,{}>({
+    getAuthors: builder.query<GetAuthorsResponse, {}>({
       query: () => ({
         document: gql`
           query GetAllAuthors {
@@ -32,7 +36,22 @@ export const api = createApi({
         `,
       }),
     }),
+    getAuthorById: builder.query<Author, string>({
+      query: id => ({
+        document: gql`
+          query GetAuthorById {
+            author(id: ${id}) {
+              id
+              name
+              age
+              noOfBooks
+            }
+          }
+        `,
+      }),
+      transformResponse: (response: AuthorResponse) => response?.author,
+    }),
   }),
 });
 
-export const { useGetAuthorsQuery } = api;
+export const { useGetAuthorsQuery, useGetAuthorByIdQuery } = api;

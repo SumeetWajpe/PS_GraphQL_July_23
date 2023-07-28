@@ -5,13 +5,15 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ApiProvider } from "@reduxjs/toolkit/query/react";
 import { api } from "./features/api/authors.api";
+import GetAuthorById from "./getAuthorByid";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
 );
 root.render(
   <ApiProvider api={api}>
-    <App />
+    {/* <App /> */}
+    <GetAuthorById />
   </ApiProvider>,
 );
 
