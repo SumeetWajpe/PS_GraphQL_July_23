@@ -54,4 +54,4 @@ export const api = createApi({
   }),
 });
 
-export const { useGetAuthorsQuery, useGetAuthorByIdQuery } = api;
+export const { useGetAuthorsQuery,useLazyGetAuthorsQuery, useGetAuthorByIdQuery } = api;
